@@ -66,6 +66,7 @@ def buscar_patente_sipi(numero_expediente, timeout=45):
         "tiene_resultados": False,
         "datos_encontrados": {},
         "html_length": 0,
+        "html_completo": "",  # ← HTML COMPLETO INICIALIZADO
         "error": "",
         "tiempo_ejecucion": 0
     }
@@ -162,6 +163,7 @@ def buscar_patente_sipi(numero_expediente, timeout=45):
             "tiene_resultados": tiene_resultados,
             "datos_encontrados": datos_encontrados,
             "html_length": len(html_final),
+            "html_completo": html_final,  # ← HTML COMPLETO AGREGADO
             "tiempo_ejecucion": round(tiempo_total, 2)
         })
         
