@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: sipi-patent-scraper
+    env: docker
+    region: oregon  # o singapore, frankfurt según tu ubicación
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DEBUG
+        value: "false"
+      - key: PORT
+        value: "10000"
+    healthCheckPath: /
+    scaling:
+      minInstances: 0  # Para plan gratuito
+      maxInstances: 1
